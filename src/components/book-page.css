@@ -1,0 +1,20 @@
+@media (max-width: 576px) {
+  img {
+    height: 200px !important;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  h5 {
+    font-size: 16px;
+  }
+  form {
+    text-align: center;
+  }
+  .col-12 {
+    margin-bottom: 20px;
+  }
+}

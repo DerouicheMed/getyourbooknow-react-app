@@ -1,0 +1,11 @@
+.error-display {
+  text-align: center;
+  padding: 0 50px;
+}
+.btn {
+  margin: 25px 0;
+  background: linear-gradient(90deg, #56b9f4 0%, #3b8ae7 100%);
+  border: none;
+  border-radius: 25px;
+  padding: 10px 30px;
+}

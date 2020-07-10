@@ -1,38 +1,27 @@
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 import "./book-page.css";
 import PaypalButton from "./paypal-button";
 
-const url = "/img/How_to_win_friends_and_influence_people.jpg";
-
-const container = {
-  backgroundImage: `url(${url})`,
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-  backgroundRepeat: "no-repeat",
-  width: "100%",
-};
-const title = {
-  fontWeight: "700",
-  fontSize: "48px",
-};
-const bookCover = {
-  height: 500,
-  margin: "auto",
-};
-
 const BookPage = ({ id }) => {
   const [book, setBook] = useState({});
   const SERVER_URL = process.env.REACT_APP_SERVER_URL;
+  const history = useHistory();
   useEffect(() => {
     console.log(id);
     axios
       .get(SERVER_URL + "/books/" + id)
-      .then(({ data }) => {
-        setBook(data);
-        console.log(data);
+      .then((res) => {
+        setBook(res.data);
+        console.log(res.status);
       })
-      .catch((err) => console.error(err));
+      .catch((err) => {
+        if (err.response.status === 404) {
+          history.push("/404");
+        }
+        console.error(err);
+      });
   }, []);
 
   return (
@@ -45,7 +34,7 @@ const BookPage = ({ id }) => {
                 <img
                   src={`/img/${id}.jpg`}
                   alt="book cover"
-                  style={bookCover}
+                  className="book-cover"
                 />
               </div>
             </div>

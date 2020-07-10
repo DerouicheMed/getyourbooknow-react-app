@@ -14,13 +14,17 @@ const BookPage = ({ id }) => {
       .get(SERVER_URL + "/books/" + id)
       .then((res) => {
         setBook(res.data);
-        console.log(res.status);
       })
       .catch((err) => {
-        if (err.response.status === 404) {
+        if (
+          err.response === undefined ||
+          err.response === null ||
+          err.response.status === 500
+        )
+          history.push("/500");
+        else if (err.response.status === 404) {
           history.push("/404");
         }
-        console.error(err);
       });
   }, []);
 
@@ -38,7 +42,7 @@ const BookPage = ({ id }) => {
                 />
               </div>
             </div>
-            <div className="col-md-6 col-12">
+            <div className="col-md-6 col-12 book-info">
               <h1>{book.title}</h1>
               <h3>{book.author}</h3>
               <h5>File : {book.file}</h5>

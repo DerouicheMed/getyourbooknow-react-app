@@ -7,3 +7,11 @@ body {
   font-family: "Roboto", sans-serif;
   color: #393939;
 }
+@media (max-width: 576px) {
+  h1 {
+    font-size: 24px;
+  }
+  h4 {
+    font-size: 20px;
+  }
+}

@@ -26,7 +26,7 @@ const ErrorPage = ({ error }) => {
                 </h6>
               </>
             )}
-            <Link to={"/books"} className="btn btn-primary">
+            <Link to={"/"} className="btn btn-error">
               Back to Home
             </Link>
           </div>

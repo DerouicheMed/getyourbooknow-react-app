@@ -5,7 +5,15 @@ body {
   margin: 0px;
   padding: 0px;
   font-family: "Roboto", sans-serif;
-  color: #393939;
+  --first-color: #393939;
+  color: var(--first-color);
+}
+button:focus,
+a:focus {
+  outline: none;
+}
+.btn {
+  border-radius: 25px;
 }
 @media (max-width: 576px) {
   h1 {
@@ -13,5 +21,10 @@ body {
   }
   h4 {
     font-size: 20px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    padding: 150px 15px;
   }
 }

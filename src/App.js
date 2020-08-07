@@ -2,13 +2,13 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter as Router } from "react-router-dom";
 import Routes from "./routes";
-import Header from "./components/header";
+import { Header } from "./components";
 
 function App() {
   return (
     <>
-      <Header></Header>
       <Router>
+        <Header />
         <Routes />
       </Router>
     </>

@@ -1,16 +1,11 @@
-.books-banner {
+.btn-search {
+  background-color: var(--first-color);
+  color: white;
   width: 100%;
 }
-@media (max-width: 991px) {
-  .header {
-    padding: 0 20px;
-  }
-}
-@media (min-width: 992px) {
-  .header {
-    padding: 80px;
-  }
-  .books-banner {
-    width: 80%;
-  }
+.btn-search:hover {
+  color: var(--first-color);
+  border-color: var(--first-color);
+  background-color: white;
+  width: 100%;
 }

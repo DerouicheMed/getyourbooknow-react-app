@@ -1,12 +1,13 @@
 import React from "react";
 import { Switch, Redirect, Route, useLocation } from "react-router-dom";
-import { BookPage, ErrorPage, HomePage } from "./components";
+import { BookPage, ErrorPage, HomePage, Loader } from "./components";
 
 const Routes = () => {
   const query = new URLSearchParams(useLocation().search);
   return (
     <Switch>
       <Route exact path="/" component={HomePage} />
+      <Route exact path="/loader" component={Loader} />
       <Route path="/books">
         <BookPage id={query.get("b")} />
       </Route>

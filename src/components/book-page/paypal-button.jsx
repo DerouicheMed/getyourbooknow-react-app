@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 
-const PaypalButton = () => {
+const PaypalButton = ({ loading }) => {
   const [loaded, setLoaded] = useState(false);
   let paypalRef = useRef();
 
@@ -43,11 +43,8 @@ const PaypalButton = () => {
       });
     }
   });
-  return (
-    <>
-      <div ref={(v) => (paypalRef = v)} />
-    </>
-  );
+  if (!loading) return <div ref={(v) => (paypalRef = v)} />;
+  else return <></>;
 };
 
 export default PaypalButton;

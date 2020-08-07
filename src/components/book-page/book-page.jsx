@@ -3,17 +3,22 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 import "./book-page.css";
 import PaypalButton from "./paypal-button";
+import Loader from "../loader/loader";
 
 const BookPage = ({ id }) => {
   const [book, setBook] = useState({});
+  const [loading, setLoading] = useState(true);
   const SERVER_URL = process.env.REACT_APP_SERVER_URL;
   const history = useHistory();
+
   useEffect(() => {
     console.log(id);
     axios
       .get(SERVER_URL + "/books/" + id)
       .then((res) => {
         setBook(res.data);
+        setLoading(false);
+        console.log(loading);
       })
       .catch((err) => {
         if (
@@ -30,26 +35,25 @@ const BookPage = ({ id }) => {
 
   return (
     <>
-      <div>
-        <div className="container">
-          <div className="row">
-            <div className="col-md-6 col-12">
-              <div style={{ textAlign: "center" }}>
-                <img
-                  src={`/img/${id}.jpg`}
-                  alt="book cover"
-                  className="book-cover"
-                />
-              </div>
+      <Loader loading={loading} />
+      <div className="container">
+        <div className="row">
+          <div className="col-md-6 col-12">
+            <div style={{ textAlign: "center" }}>
+              <img
+                src={`/img/${id}.jpg`}
+                alt="book cover"
+                className="book-cover"
+              />
             </div>
-            <div className="col-md-6 col-12 book-info">
-              <h1>{book.title}</h1>
-              <h3>{book.author}</h3>
-              <h5>File : {book.file}</h5>
-              <h5>ISBN : {book.isbn}</h5>
-              <h5>Yeah : {book.year}</h5>
-              <PaypalButton />
-            </div>
+          </div>
+          <div className="col-md-6 col-12 book-info">
+            <h1>{book.title}</h1>
+            <h3>{book.author}</h3>
+            <h5>File : {book.file}</h5>
+            <h5>ISBN : {book.isbn}</h5>
+            <h5>Yeah : {book.year}</h5>
+            <PaypalButton loading={loading} />
           </div>
         </div>
       </div>

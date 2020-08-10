@@ -1,5 +1,6 @@
 import React from "react";
 import "./search-page.css";
+import SearchInput from "../search-input/search-input";
 
 const SearchPage = () => {
   return (
@@ -8,7 +9,7 @@ const SearchPage = () => {
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <input className="btn input-search" type="text" name="" id="" />
+              <SearchInput searchActivated={true} />
             </div>
           </div>
         </div>

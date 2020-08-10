@@ -4,35 +4,6 @@
 #masthead h2 {
   font-size: 18px;
 }
-.search-input-wrapper {
-  position: relative;
-  margin: 16px 0;
-}
-.input-search {
-  border-color: var(--first-color);
-  color: var(--first-color);
-  background-color: white;
-  width: 100%;
-}
-.focus-input-btn,
-.focus-input-btn:hover {
-  position: absolute;
-  top: 0px;
-  right: 50%;
-  width: 100%;
-  background-color: var(--first-color);
-  transform: translateX(50%);
-  color: white;
-  outline: hidden;
-}
-.submit-search-btn,
-.submit-search-btn:hover {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  color: var(--first-color);
-  outline: none !important;
-}
 
 @media (max-width: 767px) {
   #masthead {

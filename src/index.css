@@ -15,16 +15,3 @@ a:focus {
 .btn {
   border-radius: 25px;
 }
-@media (max-width: 576px) {
-  h1 {
-    font-size: 24px;
-  }
-  h4 {
-    font-size: 20px;
-  }
-}
-@media (min-width: 992px) {
-  .container {
-    padding: 150px 15px;
-  }
-}

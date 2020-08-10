@@ -4,6 +4,7 @@ import axios from "axios";
 import "./book-page.css";
 import PaypalButton from "./paypal-button";
 import Loader from "../loader/loader";
+import Carousel from "../carousel/carousel";
 
 const BookPage = ({ id }) => {
   const [book, setBook] = useState({});
@@ -36,27 +37,38 @@ const BookPage = ({ id }) => {
   return (
     <>
       <Loader loading={loading} />
-      <div className="container">
-        <div className="row">
-          <div className="col-md-6 col-12">
-            <div style={{ textAlign: "center" }}>
-              <img
-                src={`/img/${id}.jpg`}
-                alt="book cover"
-                className="book-cover"
-              />
+      <section id="book-section">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-6 col-12">
+              <div className="img-container text-center mb-5">
+                <img
+                  src={`/img/${id}.jpg`}
+                  alt="book cover"
+                  className="book-cover"
+                />
+              </div>
+            </div>
+            <div className="col-md-6 col-12 book-info">
+              <h1>{book.title}</h1>
+              <h2> By {book.author}</h2>
+              <h3>File : {book.file}</h3>
+              <h3>ISBN : {book.isbn}</h3>
+              <h3>Yeah : {book.year}</h3>
+              <PaypalButton loading={loading} />
             </div>
           </div>
-          <div className="col-md-6 col-12 book-info">
-            <h1>{book.title}</h1>
-            <h3>{book.author}</h3>
-            <h5>File : {book.file}</h5>
-            <h5>ISBN : {book.isbn}</h5>
-            <h5>Yeah : {book.year}</h5>
-            <PaypalButton loading={loading} />
+        </div>
+      </section>
+      <section id=" suggestions" className={loading ? "d-none" : ""}>
+        <div className="container">
+          <div className="row">
+            <div className="col-12">
+              <Carousel />
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };

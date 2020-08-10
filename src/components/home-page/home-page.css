@@ -9,3 +9,34 @@
   background-color: white;
   width: 100%;
 }
+#masthead h1 {
+  font-size: 32px;
+}
+#masthead h2 {
+  font-size: 18px;
+}
+#description {
+  background: linear-gradient(90deg, #2c2c2c, #393939);
+  color: white !important;
+  padding: 100px 0;
+}
+
+@media (max-width: 767px) {
+  #masthead {
+    padding: 100px 0;
+  }
+}
+@media (min-width: 768px) {
+  #masthead {
+    background-image: url("/img/masthead_bg.jpg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 200px 0;
+  }
+}
+@media (min-width: 992px) {
+  #masthead {
+    padding: 300px 0;
+  }
+}

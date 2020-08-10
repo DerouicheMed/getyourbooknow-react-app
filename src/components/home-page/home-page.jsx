@@ -9,33 +9,49 @@ const HomePage = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 3000);
+    }, 1000);
   }, []);
 
   return (
     <>
       <Loader loading={loading} />
-      <div className="container">
-        <div className="row text-center mb-5">
-          <div className="col-12  ">
-            <h1>
-              GetYourBookNow let's you download ebooks straight to your device
-              in the fastest and easiest way
-            </h1>
-            <h4>Choose from a varity of books only for the smallest prices</h4>
+      <section id="masthead" className={loading ? "d-none" : ""}>
+        <div className="container">
+          <div className="row mb-5">
+            <div className="col-12 col-md-6 order-md-2 text-center">
+              <h1>
+                GetYourBookNow let's you download ebooks straight to your device
+                in the fastest way
+              </h1>
+              <h2>
+                Choose from a varity of books only for the smallest prices
+              </h2>
+            </div>
+            <div className="col-12 col-md-6 order-md-1 banner-pic  "></div>
+          </div>
+          <div className="row mt-5 ">
+            <div className="col-12 col-md-4 offset-md-4">
+              <button className="btn btn-search">Search Book</button>
+            </div>
           </div>
         </div>
-        <div className="row mb-5">
-          <div className="col-12 col-md-4 offset-md-4">
-            <button className="btn btn-search">Search Book</button>
+      </section>
+      <section id=" suggestions" className={loading ? "d-none" : ""}>
+        <div className="container">
+          <div className="row">
+            <div className="col-12">
+              <Carousel />
+            </div>
           </div>
         </div>
-        <div className="row">
-          <div className="col-12">
-            <Carousel />
+      </section>
+      <section id="description">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-8">why choose GetYourBookNow</div>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };

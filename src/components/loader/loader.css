@@ -4,6 +4,7 @@
   height: 100vh;
   z-index: 110;
   background-color: white;
+  overflow: hidden;
 }
 .book {
   --color: #393939;

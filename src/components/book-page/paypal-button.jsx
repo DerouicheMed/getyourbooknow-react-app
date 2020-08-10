@@ -40,7 +40,7 @@ const PaypalButton = ({ loading }) => {
             },
           })
           .render(paypalRef);
-      });
+      }, 1000);
     }
   });
   if (!loading) return <div ref={(v) => (paypalRef = v)} />;

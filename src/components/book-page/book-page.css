@@ -1,3 +1,19 @@
+#book-section {
+  padding-top: 150px;
+}
+.book-cover {
+  height: 400px;
+}
+.book-info h1 {
+  font-size: 30px;
+}
+.book-info h2 {
+  font-size: 24px;
+}
+.book-info h3 {
+  font-size: 16px;
+}
+
 @media (max-width: 576px) {
   img {
     height: 200px !important;
@@ -5,10 +21,10 @@
   .book-info h1 {
     font-size: 24px;
   }
-  .book-info h3 {
+  .book-info h2 {
     font-size: 20px;
   }
-  .book-info h5 {
+  .book-info h3 {
     font-size: 16px;
   }
   form {
@@ -18,6 +34,8 @@
     margin-bottom: 20px;
   }
 }
-.book-cover {
-  height: 500px;
+@media (max-width: 767px) {
+  #book-section {
+    padding-top: 80px;
+  }
 }

@@ -1,0 +1,10 @@
+#search-bar {
+  padding: 100px 0 50px 0;
+}
+
+.input-search {
+  border-color: var(--first-color);
+  color: var(--first-color);
+  background-color: white;
+  width: 100%;
+}

@@ -1,6 +1,12 @@
 import React from "react";
 import { Switch, Redirect, Route, useLocation } from "react-router-dom";
-import { BookPage, ErrorPage, HomePage, Loader } from "./components";
+import {
+  BookPage,
+  ErrorPage,
+  HomePage,
+  Loader,
+  SearchPage,
+} from "./components";
 
 const Routes = () => {
   const query = new URLSearchParams(useLocation().search);
@@ -10,6 +16,9 @@ const Routes = () => {
       <Route exact path="/loader" component={Loader} />
       <Route path="/books">
         <BookPage id={query.get("b")} />
+      </Route>
+      <Route path="/search">
+        <SearchPage id={query.get("s")} />
       </Route>
       <Route path="/404">
         <ErrorPage error={"404"}></ErrorPage>

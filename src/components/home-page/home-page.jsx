@@ -6,6 +6,8 @@ import Loader from "../loader/loader";
 const HomePage = () => {
   const [loading, setLoading] = useState(true);
   const [initiateSearch, setInitiateSearch] = useState(false);
+  const [searchValue, setSearchValue] = useState("");
+  const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
@@ -17,6 +19,17 @@ const HomePage = () => {
     var searchInput = document.getElementById("search-input");
     setInitiateSearch(true);
     searchInput.focus();
+  };
+
+  const handleInputChange = (event) => {
+    setSearchValue(event.target.value);
+  };
+
+  const handleInputSubmit = () => {
+    setSubmitted(true);
+    if (searchValue !== "") {
+      console.log("search input is : " + searchValue);
+    }
   };
   return (
     <>
@@ -43,7 +56,16 @@ const HomePage = () => {
                   type="text"
                   name=""
                   id="search-input"
+                  value={searchValue}
+                  onChange={handleInputChange}
                 />
+                {submitted && searchValue === "" ? (
+                  <small class="form-text text-center text-muted">
+                    Please insert something to search
+                  </small>
+                ) : (
+                  <></>
+                )}
                 {initiateSearch !== true ? (
                   <button
                     className="btn focus-input-btn"
@@ -54,7 +76,10 @@ const HomePage = () => {
                 ) : (
                   <></>
                 )}
-                <button className=" btn submit-search-btn">
+                <button
+                  className=" btn submit-search-btn"
+                  onClick={handleInputSubmit}
+                >
                   <i className="fas fa-search search-btn-icon"></i>
                 </button>
               </div>

@@ -1,0 +1,10 @@
+footer {
+  background-color: var(--first-color);
+  color: white;
+  font-size: 14px;
+  padding: 17px 0;
+}
+footer a {
+  color: white;
+  text-decoration: none;
+}

@@ -45,13 +45,6 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      <section id="description">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-8">why choose GetYourBookNow</div>
-          </div>
-        </div>
-      </section>
     </>
   );
 };

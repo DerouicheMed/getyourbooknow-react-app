@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter as Router } from "react-router-dom";
 import Routes from "./routes";
-import { Header } from "./components";
+import { Header, Footer } from "./components";
 
 function App() {
   return (
@@ -10,6 +10,7 @@ function App() {
       <Router>
         <Header />
         <Routes />
+        <Footer />
       </Router>
     </>
   );

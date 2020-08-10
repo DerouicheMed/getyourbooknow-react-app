@@ -43,9 +43,6 @@ const Carousel = () => {
           {suggestions.map((book) => (
             <>
               <Box book={book} />
-              <Box book={book} />
-              <Box book={book} />
-              <Box book={book} />
             </>
           ))}
         </div>

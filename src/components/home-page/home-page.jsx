@@ -5,6 +5,7 @@ import Loader from "../loader/loader";
 
 const HomePage = () => {
   const [loading, setLoading] = useState(true);
+  const [initiateSearch, setInitiateSearch] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
@@ -12,12 +13,17 @@ const HomePage = () => {
     }, 1000);
   }, []);
 
+  const setInputFocus = () => {
+    var searchInput = document.getElementById("search-input");
+    setInitiateSearch(true);
+    searchInput.focus();
+  };
   return (
     <>
       <Loader loading={loading} />
       <section id="masthead" className={loading ? "d-none" : ""}>
         <div className="container">
-          <div className="row mb-5">
+          <div className="row">
             <div className="col-12 col-md-6 order-md-2 text-center">
               <h1>
                 GetYourBookNow let's you download ebooks straight to your device
@@ -29,9 +35,29 @@ const HomePage = () => {
             </div>
             <div className="col-12 col-md-6 order-md-1 banner-pic  "></div>
           </div>
-          <div className="row mt-5 ">
-            <div className="col-12 col-md-4 offset-md-4">
-              <button className="btn btn-search">Search Book</button>
+          <div className="row ">
+            <div className="col-12 col-md-6 offset-md-6">
+              <div className="search-input-wrapper">
+                <input
+                  className="btn input-search animate__animated"
+                  type="text"
+                  name=""
+                  id="search-input"
+                />
+                {initiateSearch !== true ? (
+                  <button
+                    className="btn focus-input-btn"
+                    onClick={setInputFocus}
+                  >
+                    Search Book
+                  </button>
+                ) : (
+                  <></>
+                )}
+                <button className=" btn submit-search-btn">
+                  <i className="fas fa-search search-btn-icon"></i>
+                </button>
+              </div>
             </div>
           </div>
         </div>

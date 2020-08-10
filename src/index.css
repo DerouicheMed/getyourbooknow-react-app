@@ -8,9 +8,12 @@ body {
   --first-color: #393939;
   color: var(--first-color);
 }
+input:focus,
+textarea:focus,
+select:focus,
 button:focus,
 a:focus {
-  outline: none;
+  outline: hidden !important;
 }
 .btn {
   border-radius: 25px;

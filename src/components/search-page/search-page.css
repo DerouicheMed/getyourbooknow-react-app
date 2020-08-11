@@ -8,3 +8,24 @@
   background-color: white;
   width: 100%;
 }
+.media {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  padding: 10px;
+}
+.media img {
+  height: 130px;
+  margin: 0 10px;
+}
+
+.media h1 {
+  font-size: 20px;
+  color: var(--first-color);
+}
+.media h2 {
+  font-size: 16px;
+}
+.media h3 {
+  font-size: 14px;
+}
+@media (min-width: 992px) {
+}

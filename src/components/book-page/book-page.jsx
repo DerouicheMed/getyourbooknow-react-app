@@ -13,7 +13,6 @@ const BookPage = ({ id }) => {
   const history = useHistory();
 
   useEffect(() => {
-    console.log(id);
     axios
       .get(SERVER_URL + "/books/" + id)
       .then((res) => {

@@ -55,7 +55,7 @@ const HomePage = () => {
             </div>
           </div>
           <div className="row">
-            <div className="col-md-6">
+            <div className="col-sm-6">
               <div class="card mb-3 animate__animated animate__slideInUp">
                 <img
                   class="card-img-top"
@@ -72,7 +72,7 @@ const HomePage = () => {
                 </div>
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-sm-6">
               <div class="card mb-3 animate__animated animate__slideInUp">
                 <img
                   class="card-img-top"

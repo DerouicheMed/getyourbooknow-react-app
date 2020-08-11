@@ -5,14 +5,14 @@ import "./search-page.css";
 import SearchInput from "../search-input/search-input";
 import Loader from "../loader/loader";
 
-const SearchPage = () => {
+const SearchPage = ({ searchString }) => {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(true);
   const SERVER_URL = process.env.REACT_APP_SERVER_URL;
   const history = useHistory();
   useEffect(() => {
     axios
-      .get(SERVER_URL + "/books")
+      .get(SERVER_URL + `/books/search/${searchString}`)
       .then((res) => {
         setBooks(res.data);
         setLoading(false);
@@ -29,7 +29,7 @@ const SearchPage = () => {
           history.push("/404");
         }
       });
-  }, []);
+  }, [searchString]);
   return (
     <>
       <section id="search-bar">
@@ -42,6 +42,7 @@ const SearchPage = () => {
         </div>
       </section>
       <section>
+        <Loader loading={loading} />
         <div className="container">
           <div className="row">
             <div className="col-12">

@@ -18,7 +18,7 @@ const Routes = () => {
         <BookPage id={query.get("b")} />
       </Route>
       <Route path="/search">
-        <SearchPage id={query.get("s")} />
+        <SearchPage searchString={query.get("s")} />
       </Route>
       <Route path="/404">
         <ErrorPage error={"404"}></ErrorPage>

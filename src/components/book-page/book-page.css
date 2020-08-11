@@ -15,23 +15,20 @@
 }
 
 @media (max-width: 576px) {
-  img {
+  .img-container img {
     height: 200px !important;
   }
   .book-info h1 {
-    font-size: 24px;
-  }
-  .book-info h2 {
     font-size: 20px;
   }
-  .book-info h3 {
+  .book-info h2 {
     font-size: 16px;
+  }
+  .book-info h3 {
+    font-size: 14px;
   }
   form {
     text-align: center;
-  }
-  .col-12 {
-    margin-bottom: 20px;
   }
 }
 @media (max-width: 767px) {

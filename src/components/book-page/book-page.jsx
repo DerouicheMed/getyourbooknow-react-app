@@ -18,7 +18,7 @@ const BookPage = ({ id }) => {
       .then((res) => {
         setBook(res.data);
         setLoading(false);
-        console.log(loading);
+        window.scrollTo(0, 0);
       })
       .catch((err) => {
         if (
@@ -31,7 +31,7 @@ const BookPage = ({ id }) => {
           history.push("/404");
         }
       });
-  }, []);
+  }, [id]);
 
   return (
     <>

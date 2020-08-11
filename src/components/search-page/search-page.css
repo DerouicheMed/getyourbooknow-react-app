@@ -1,7 +1,6 @@
 #search-bar {
   padding: 100px 0 50px 0;
 }
-
 .input-search {
   border-color: var(--first-color);
   color: var(--first-color);
@@ -18,14 +17,37 @@
 }
 
 .media h1 {
-  font-size: 20px;
+  font-size: 24px;
   color: var(--first-color);
+  margin-bottom: 3px;
 }
 .media h2 {
-  font-size: 16px;
+  font-size: 18px;
+  margin-bottom: 3px;
 }
 .media h3 {
   font-size: 14px;
+  margin-bottom: 3px;
 }
-@media (min-width: 992px) {
+@media (max-width: 575px) {
+  #search-bar {
+    padding: 80px 0 10px 0;
+  }
+  .media h1 {
+    font-size: 18px;
+    color: var(--first-color);
+    margin-bottom: 2px;
+  }
+  .media h2 {
+    font-size: 14px;
+    margin-bottom: 2px;
+  }
+  .media h3 {
+    font-size: 11px;
+    margin-bottom: 2px;
+  }
+  .media img {
+    height: 120px;
+    margin: 0 10px;
+  }
 }

@@ -1,9 +1,15 @@
 .error-display {
   text-align: center;
-  padding: 0 50px;
+  padding: 100px 50px;
 }
 .error-display img {
   width: 100%;
+}
+.error-display h1 {
+  font-size: 30px;
+}
+.error-display h2 {
+  font-size: 18px;
 }
 .btn-error {
   margin: 25px 0;
@@ -17,7 +23,14 @@
   background: linear-gradient(-90deg, #56b9f4 0%, #3b8ae7 100%) !important;
   color: white;
 }
-
+@media (max-width: 575px) {
+  .error-display h1 {
+    font-size: 20px;
+  }
+  .error-display h2 {
+    font-size: 14px;
+  }
+}
 @media (min-width: 992px) {
   .error-display img {
     width: 50%;

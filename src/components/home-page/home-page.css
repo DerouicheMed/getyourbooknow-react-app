@@ -1,18 +1,35 @@
-#masthead h1 {
+#masthead h1,
+#description h1 {
   font-size: 32px;
 }
-#masthead h2 {
+#masthead h2,
+#suggestions h2 {
   font-size: 18px;
 }
-
+#description {
+  padding: 100px 0;
+}
+@media (max-width: 575px) {
+  #masthead h1,
+  #description h1 {
+    font-size: 20px;
+  }
+  #masthead h2,
+  #suggestions h2 {
+    font-size: 16px;
+  }
+  #description {
+    padding: 50px 0;
+  }
+}
 @media (max-width: 767px) {
   #masthead {
-    padding-top: 100px;
+    padding: 100px 0 50px 0;
   }
 }
 @media (min-width: 768px) {
   #masthead {
-    background-image: url("/img/masthead_bg.jpg");
+    background-image: url("/img/masthead_bg2.jpg");
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;

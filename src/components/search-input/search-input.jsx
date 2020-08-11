@@ -18,6 +18,10 @@ const SearchInput = ({ searchActivated }) => {
     setSearchValue(event.target.value);
   };
 
+  const handleKeyUp = (event) => {
+    if (event.keyCode === 13) handleInputSubmit();
+  };
+
   const handleInputSubmit = () => {
     setSubmitted(true);
     if (searchValue !== "") {
@@ -35,6 +39,7 @@ const SearchInput = ({ searchActivated }) => {
         id="search-input"
         value={searchValue}
         onChange={handleInputChange}
+        onKeyUp={handleKeyUp}
       />
       {submitted && searchValue === "" ? (
         <small class="form-text text-center text-muted">

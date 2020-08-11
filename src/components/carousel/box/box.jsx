@@ -13,6 +13,9 @@ const Box = ({ book }) => {
           <h3>{book.title}</h3>
           <h4>{book.author}</h4>
         </Link>
+        <div className="text-right">
+          <h4>Only for 4.97$</h4>
+        </div>
       </div>
     </div>
   );

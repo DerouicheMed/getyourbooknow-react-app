@@ -11,7 +11,7 @@ const Carousel = () => {
 
   useEffect(() => {
     axios
-      .get(SERVER_URL + "/books")
+      .get(SERVER_URL + "/api/books")
       .then((res) => {
         setSuggestions(res.data);
         console.log(res.data);

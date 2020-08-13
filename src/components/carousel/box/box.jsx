@@ -1,12 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./box.css";
+import { Link } from "react-router-dom";
+const SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 const Box = ({ book }) => {
   return (
     <div className="box">
       <div className="book-thumbnail text-center">
-        <img src={"/img/" + book._id + ".jpg"} alt="" />
+        <img src={`${SERVER_URL}/public/${book._id}.jpg`} alt="" />
       </div>
       <div className="book-description">
         <Link to={"/books/?b=" + book._id}>

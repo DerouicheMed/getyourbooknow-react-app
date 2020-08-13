@@ -12,7 +12,7 @@ const SearchPage = ({ searchString }) => {
   const history = useHistory();
   useEffect(() => {
     axios
-      .get(SERVER_URL + `/books/search/${searchString}`)
+      .get(`${SERVER_URL}/api/books/search/${searchString}`)
       .then((res) => {
         setBooks(res.data);
         setLoading(false);
@@ -50,7 +50,7 @@ const SearchPage = ({ searchString }) => {
                 <div class="media mb-3">
                   <img
                     class="mr-3"
-                    src={`/img/${book._id}.jpg`}
+                    src={`${SERVER_URL}/public/${book._id}.jpg`}
                     alt="Generic placeholder image"
                   />
                   <div class="media-body">

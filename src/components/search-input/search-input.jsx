@@ -27,6 +27,7 @@ const SearchInput = ({ searchActivated }) => {
     if (searchValue !== "") {
       history.push("/search/?s=" + searchValue);
       setSearchValue("");
+      setSubmitted(false);
     }
   };
 

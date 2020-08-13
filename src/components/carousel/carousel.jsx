@@ -6,15 +6,17 @@ import Box from "./box/box";
 
 const Carousel = () => {
   const [suggestions, setSuggestions] = useState([]);
+  const [loading, setLoading] = useState(true);
   const SERVER_URL = process.env.REACT_APP_SERVER_URL;
   const history = useHistory();
 
   useEffect(() => {
+    setLoading(true);
     axios
       .get(SERVER_URL + "/api/books")
       .then((res) => {
         setSuggestions(res.data);
-        console.log(res.data);
+        setLoading(false);
       })
       .catch((err) => {
         if (
@@ -39,13 +41,21 @@ const Carousel = () => {
   return (
     <>
       <div id="suggestions-slider" className="suggestions-slider ">
-        <div className="inner-wrapper d-flex">
-          {suggestions.map((book) => (
-            <>
-              <Box book={book} />
-            </>
-          ))}
-        </div>
+        {loading ? (
+          <div class="spinner-container d-flex justify-content-center">
+            <div class="spinner-grow" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
+        ) : (
+          <div className="inner-wrapper d-flex">
+            {suggestions.map((book) => (
+              <>
+                <Box book={book} />
+              </>
+            ))}
+          </div>
+        )}
         <button
           className="btn navigation-btn navigation-btn-left"
           onClick={() => navigate("left")}

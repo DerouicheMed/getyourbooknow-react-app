@@ -15,6 +15,7 @@ const BookPage = ({ id }) => {
   const history = useHistory();
 
   useEffect(() => {
+    setLoading(true);
     axios
       .get(SERVER_URL + "/api/books/" + id)
       .then((res) => {

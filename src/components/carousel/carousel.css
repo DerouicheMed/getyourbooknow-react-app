@@ -1,5 +1,6 @@
 .suggestions-slider {
   overflow-x: scroll;
+  min-height: 330px;
   -webkit-overflow-scrolling: touch;
 }
 .suggestions-slider::-webkit-scrollbar {
@@ -22,4 +23,7 @@
 }
 .navigation-btn-right {
   right: 5px;
+}
+.spinner-container {
+  padding: 125px;
 }

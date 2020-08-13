@@ -21,6 +21,12 @@
   #description {
     padding: 50px 0;
   }
+  .card-title {
+    font-size: 20px !important;
+  }
+  .card-text {
+    font-size: 14px !important;
+  }
 }
 @media (max-width: 767px) {
   #masthead {

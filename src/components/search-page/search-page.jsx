@@ -11,6 +11,7 @@ const SearchPage = ({ searchString }) => {
   const SERVER_URL = process.env.REACT_APP_SERVER_URL;
   const history = useHistory();
   useEffect(() => {
+    setLoading(true);
     axios
       .get(`${SERVER_URL}/api/books/search/${searchString}`)
       .then((res) => {
@@ -30,6 +31,31 @@ const SearchPage = ({ searchString }) => {
         }
       });
   }, [searchString]);
+
+  const renderBooks = () => {
+    if (books.length === 0) {
+      return <h1 className="not-found-text">No results founds</h1>;
+    } else {
+      return books.map((book) => (
+        <div class="media mb-3">
+          <img
+            class="mr-3"
+            src={`${SERVER_URL}/public/${book._id}.jpg`}
+            alt="Generic placeholder image"
+          />
+          <div class="media-body">
+            <Link to={`/books/?b=${book._id}`}>
+              <h1>{book.title}</h1>
+            </Link>
+            <h2> By {book.author}</h2>
+            <h3>File : {book.file}</h3>
+            <h3>ISBN : {book.isbn}</h3>
+            <h3>Yeah : {book.year}</h3>
+          </div>
+        </div>
+      ));
+    }
+  };
   return (
     <>
       <section id="search-bar">
@@ -42,28 +68,20 @@ const SearchPage = ({ searchString }) => {
         </div>
       </section>
       <section>
-        <Loader loading={loading} />
         <div className="container">
           <div className="row">
             <div className="col-12">
-              {books.map((book) => (
-                <div class="media mb-3">
-                  <img
-                    class="mr-3"
-                    src={`${SERVER_URL}/public/${book._id}.jpg`}
-                    alt="Generic placeholder image"
-                  />
-                  <div class="media-body">
-                    <Link to={`/books/?b=${book._id}`}>
-                      <h1>{book.title}</h1>
-                    </Link>
-                    <h2> By {book.author}</h2>
-                    <h3>File : {book.file}</h3>
-                    <h3>ISBN : {book.isbn}</h3>
-                    <h3>Yeah : {book.year}</h3>
+              {loading ? (
+                <>
+                  <div class=" d-flex justify-content-center">
+                    <div class="spinner-grow" role="status">
+                      <span class="sr-only">Loading...</span>
+                    </div>
                   </div>
-                </div>
-              ))}
+                </>
+              ) : (
+                renderBooks()
+              )}
             </div>
           </div>
         </div>

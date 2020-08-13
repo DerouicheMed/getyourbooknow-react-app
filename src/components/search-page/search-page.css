@@ -16,7 +16,8 @@
   margin: 0 10px;
 }
 
-.media h1 {
+.media h1,
+.not-found-text {
   font-size: 20px;
   color: var(--first-color);
   margin-bottom: 3px;
@@ -33,7 +34,8 @@
   #search-bar {
     padding: 80px 0 10px 0;
   }
-  .media h1 {
+  .media h1,
+  .not-found-text {
     font-size: 18px;
     color: var(--first-color);
     margin-bottom: 2px;

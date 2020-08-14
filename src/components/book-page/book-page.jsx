@@ -43,7 +43,7 @@ const BookPage = ({ id }) => {
   return (
     <>
       <Loader loading={loading} />
-      <section id="book-section">
+      <section id="book-section" className={loading ? "d-none" : ""}>
         <div className="container">
           <div className="row">
             <div className="col-md-6 col-12">

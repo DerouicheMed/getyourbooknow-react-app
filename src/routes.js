@@ -7,6 +7,7 @@ import {
   Loader,
   SearchPage,
 } from "./components";
+import { AdminPage, AddBookPage } from "./admin";
 
 const Routes = () => {
   const query = new URLSearchParams(useLocation().search);
@@ -20,6 +21,8 @@ const Routes = () => {
       <Route path="/search">
         <SearchPage searchString={query.get("s")} />
       </Route>
+      <Route exact path="/admin" component={AdminPage} />
+      <Route path="/admin/add-book" component={AddBookPage} />
       <Route path="/404">
         <ErrorPage error={"404"}></ErrorPage>
       </Route>

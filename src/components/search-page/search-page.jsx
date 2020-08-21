@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useHistory, Link } from "react-router-dom";
 import axios from "axios";
 import "./search-page.css";
-import SearchInput from "../search-input/search-input";
-import Loader from "../loader/loader";
+import { SearchInput } from "../../shared";
 
 const SearchPage = ({ searchString }) => {
   const [books, setBooks] = useState([]);
@@ -34,7 +33,16 @@ const SearchPage = ({ searchString }) => {
 
   const renderBooks = () => {
     if (books.length === 0) {
-      return <h1 className="not-found-text">No results founds</h1>;
+      return (
+        <>
+          <h1 className="not-found-text">No results founds</h1>
+          <img
+            src="/img/empty-search-banner.png"
+            alt=""
+            className="img-fluid"
+          />
+        </>
+      );
     } else {
       return books.map((book) => (
         <div class="media mb-3">
@@ -67,7 +75,7 @@ const SearchPage = ({ searchString }) => {
           </div>
         </div>
       </section>
-      <section>
+      <section id="search-result">
         <div className="container">
           <div className="row">
             <div className="col-12">

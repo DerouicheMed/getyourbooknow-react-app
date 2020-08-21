@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./home-page.css";
-import Carousel from "../carousel/carousel";
-import Loader from "../loader/loader";
-import SearchInput from "../search-input/search-input";
+import { Loader, SearchInput, Carousel } from "../../shared";
 
 const HomePage = () => {
   const [loading, setLoading] = useState(true);

@@ -2,9 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import "./book-page.css";
-import PaypalButton from "./paypal-button";
-import Loader from "../loader/loader";
-import Carousel from "../carousel/carousel";
+import { Carousel, Loader, PaypalButton } from "../../shared";
 import { downloadFile } from "../../services/download-file";
 
 const BookPage = ({ id }) => {
@@ -69,8 +67,13 @@ const BookPage = ({ id }) => {
           </div>
         </div>
       </section>
-      <section id=" suggestions" className={loading ? "d-none" : ""}>
+      <section id="suggestions" className={loading ? "d-none" : ""}>
         <div className="container">
+          <div className="row mb-3">
+            <div className="col-12">
+              <h2>Books You might like :</h2>
+            </div>
+          </div>
           <div className="row">
             <div className="col-12">
               <Carousel />

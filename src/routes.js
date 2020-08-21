@@ -4,25 +4,33 @@ import {
   BookPage,
   ErrorPage,
   HomePage,
-  Loader,
   SearchPage,
+  PolicyPage,
 } from "./components";
-import { AdminPage, AddBookPage } from "./admin";
+import { Dashboard, AddBookPage } from "./admin";
 
 const Routes = () => {
   const query = new URLSearchParams(useLocation().search);
   return (
     <Switch>
       <Route exact path="/" component={HomePage} />
-      <Route exact path="/loader" component={Loader} />
       <Route path="/books">
         <BookPage id={query.get("b")} />
       </Route>
       <Route path="/search">
         <SearchPage searchString={query.get("s")} />
       </Route>
-      <Route exact path="/admin" component={AdminPage} />
+      <Route exact path="/admin" component={Dashboard} />
       <Route path="/admin/add-book" component={AddBookPage} />
+      <Route path="/about">
+        <PolicyPage indicator={"about"}></PolicyPage>
+      </Route>
+      <Route path="/privacy">
+        <PolicyPage indicator={"privacy"}></PolicyPage>
+      </Route>
+      <Route path="/terms">
+        <PolicyPage indicator={"terms"}></PolicyPage>
+      </Route>
       <Route path="/404">
         <ErrorPage error={"404"}></ErrorPage>
       </Route>

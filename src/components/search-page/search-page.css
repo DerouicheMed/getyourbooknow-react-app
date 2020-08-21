@@ -1,6 +1,9 @@
 #search-bar {
   padding: 100px 0 50px 0;
 }
+#search-result {
+  height: 100vh;
+}
 .input-search {
   border-color: var(--first-color);
   color: var(--first-color);

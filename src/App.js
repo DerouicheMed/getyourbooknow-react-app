@@ -10,6 +10,7 @@ function App() {
       <Router>
         <Header />
         <Routes />
+        <Footer />
       </Router>
     </>
   );

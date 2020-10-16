@@ -9,10 +9,12 @@ const BookPage = ({ id }) => {
   const [book, setBook] = useState({});
   const [file, setFile] = useState();
   const [loading, setLoading] = useState(true);
+  const [transactionCompleted, setTransactionCompleted] = useState(false);
   const SERVER_URL = process.env.REACT_APP_SERVER_URL;
   const history = useHistory();
 
   useEffect(() => {
+    setTransactionCompleted(false);
     setLoading(true);
     axios
       .get(SERVER_URL + "/api/books/" + id)
@@ -33,6 +35,13 @@ const BookPage = ({ id }) => {
         }
       });
   }, [id]);
+
+  const transactionState = (data) => {
+    if (data === "transaction completed") {
+      setTransactionCompleted(true);
+      downloadFile(book);
+    }
+  };
 
   const handleDownload = () => {
     downloadFile(book);
@@ -59,10 +68,20 @@ const BookPage = ({ id }) => {
               <h3>File : {book.file}</h3>
               <h3>ISBN : {book.isbn}</h3>
               <h3>Year : {book.year}</h3>
-              <PaypalButton loading={loading} />
-              <button className="btn" onClick={handleDownload}>
-                Simulate download for testing purposes
-              </button>
+              {!transactionCompleted ? (
+                <PaypalButton
+                  loading={loading}
+                  transactionStateCallback={transactionState}
+                />
+              ) : (
+                <>
+                  Your download will start soon. If download doesn't start
+                  please click
+                  <button className="btn" onClick={handleDownload}>
+                    Download Book
+                  </button>
+                </>
+              )}
             </div>
           </div>
         </div>

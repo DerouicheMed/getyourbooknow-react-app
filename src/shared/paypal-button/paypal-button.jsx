@@ -7,7 +7,7 @@ const PaypalButton = ({ loading, transactionStateCallback }) => {
   useEffect(() => {
     const script = document.createElement("script");
     script.src =
-      "https://www.paypal.com/sdk/js?client-id=AXCw6gEiIMj6cRkrlj75BW7A3R5d94M3eggfXDRJ_S6dakW8TdbVIHlD0PoJz2QZr03r6F0ZCl1Sp8Ot";
+      "https://www.paypal.com/sdk/js?client-id=AY5qynyvdp_wiXWXDvD9wQpIjAgAs_9jQspKJeH8Hf-W6F44ujGr3zZ1SBH1mw7NrrGQTQBmkLCBtvO8";
     script.addEventListener("load", () => setLoaded(true));
     document.body.appendChild(script);
 
@@ -23,7 +23,7 @@ const PaypalButton = ({ loading, transactionStateCallback }) => {
                   {
                     amount: {
                       currency_code: "USD",
-                      value: "4.97",
+                      value: "0.01",
                     },
                   },
                 ],

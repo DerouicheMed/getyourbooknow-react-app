@@ -51,7 +51,7 @@ const SearchInput = ({ searchActivated }) => {
       )}
       {initiateSearch !== true ? (
         <button className="btn focus-input-btn" onClick={setInputFocus}>
-          Search Book
+          <i className="fas fa-search search-btn-icon"></i> Search Book
         </button>
       ) : (
         <></>

@@ -31,7 +31,7 @@ const HomePage = () => {
       </section>
       <section id="suggestions" className={loading ? "d-none" : ""}>
         <div className="container">
-          <div className="row mb-3">
+          <div className="row mb-3 mt-5">
             <div className="col-12">
               <h2>Books You might like :</h2>
             </div>

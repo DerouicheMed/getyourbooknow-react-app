@@ -23,7 +23,7 @@ const PaypalButton = ({ loading, transactionStateCallback }) => {
                   {
                     amount: {
                       currency_code: "USD",
-                      value: "0.01",
+                      value: "4.97",
                     },
                   },
                 ],

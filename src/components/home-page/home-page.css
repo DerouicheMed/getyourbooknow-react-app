@@ -1,3 +1,6 @@
+#masthead {
+  color: white;
+}
 #masthead h1,
 #description h1 {
   font-size: 32px;
@@ -30,6 +33,7 @@
 }
 @media (max-width: 767px) {
   #masthead {
+    color: var(--first-color);
     padding: 100px 0 50px 0;
   }
   .card-title {
@@ -41,9 +45,9 @@
 }
 @media (min-width: 768px) {
   #masthead {
-    background-image: url("/img/masthead_bg2.jpg");
+    background-image: url("/img/masthead_bg.jpg");
     background-position: center;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     padding: 150px 0;
   }

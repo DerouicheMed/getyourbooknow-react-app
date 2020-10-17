@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./home-page.css";
-import { Loader, SearchInput, Carousel } from "../../shared";
+import { Loader, SearchInput, Carousel, Advertisement } from "../../shared";
 
 const HomePage = () => {
   const [loading, setLoading] = useState(true);
@@ -31,7 +31,7 @@ const HomePage = () => {
       </section>
       <section id="suggestions" className={loading ? "d-none" : ""}>
         <div className="container">
-          <div className="row mb-3 mt-5">
+          <div className="row mb-3">
             <div className="col-12">
               <h2>Books You might like :</h2>
             </div>
@@ -42,6 +42,9 @@ const HomePage = () => {
             </div>
           </div>
         </div>
+      </section>
+      <section id="advertisement" className={loading ? "d-none" : ""}>
+        <Advertisement />
       </section>
       <section id="description" className={loading ? "d-none" : ""}>
         <div className="container">

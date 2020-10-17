@@ -27,17 +27,3 @@
   color: #72492c;
   outline: none !important;
 }
-@media (max-width: 767px) {
-  .focus-input-btn,
-  .focus-input-btn:hover {
-    background-color: var(--first-color);
-  }
-  .submit-search-btn,
-  .submit-search-btn:hover {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    color: var(--first-color);
-    outline: none !important;
-  }
-}

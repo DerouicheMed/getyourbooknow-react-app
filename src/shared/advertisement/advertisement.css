@@ -1,0 +1,47 @@
+.btn-ad-1 {
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  transform: translate(-15%, -50%);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--first-color);
+  background-color: white;
+  border-color: var(--first-color);
+  padding: 10px 30px;
+}
+.btn-ad-2 {
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  transform: translate(-15%, -50%);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--first-color);
+  background-color: white;
+  border-color: var(--first-color);
+  padding: 10px 30px;
+}
+.btn-ad-3 {
+  position: absolute;
+  top: 50%;
+  right: 15%;
+  transform: translate(15%, -50%);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--first-color);
+  background-color: white;
+  border-color: var(--first-color);
+  padding: 10px 30px;
+}
+@media (max-width: 575px) {
+  .btn {
+    font-size: 11px;
+    padding: 5px 15px;
+  }
+}
+@media (min-width: 1200px) {
+  .ad-container {
+    height: 200px;
+  }
+}

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import "./book-page.css";
-import { Carousel, Loader, PaypalButton } from "../../shared";
+import { Carousel, Loader, PaypalButton, Advertisement } from "../../shared";
 import { downloadFile } from "../../services/download-file";
 
 const BookPage = ({ id }) => {
@@ -85,6 +85,9 @@ const BookPage = ({ id }) => {
             </div>
           </div>
         </div>
+      </section>
+      <section id="advertisement" className={loading ? "d-none" : ""}>
+        <Advertisement />
       </section>
       <section id="suggestions" className={loading ? "d-none" : ""}>
         <div className="container">
